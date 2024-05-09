@@ -6,7 +6,7 @@ import PropTypes from 'prop-types'; // ES6
 
 
 
-const Blogs = ({handleAddToBookmarks}) => {
+const Blogs = ({handleAddToBookmarks, handleAddToTime}) => {
     const [blogs, setBlogs] = useState([])
     useEffect(() =>{
         fetch('blogs.json')
@@ -18,7 +18,7 @@ const Blogs = ({handleAddToBookmarks}) => {
         <div className="md:w-2/3">
            
            {
-            blogs.map((blog, idx) => <Blog key={idx} handleAddToBookmarks={handleAddToBookmarks} blog={blog}></Blog>)
+            blogs.map((blog, idx) => <Blog key={idx} handleAddToBookmarks={handleAddToBookmarks} handleAddToTime={handleAddToTime} blog={blog}></Blog>)
            }
         </div>
     );
@@ -26,7 +26,8 @@ const Blogs = ({handleAddToBookmarks}) => {
 
 
 Blogs.propTypes = {
-    handleAddToBookmarks: PropTypes.func
+    handleAddToBookmarks: PropTypes.func,
+    handleAddToTime: PropTypes.func
 }
 
 export default Blogs;
