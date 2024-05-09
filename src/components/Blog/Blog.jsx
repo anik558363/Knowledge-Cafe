@@ -28,7 +28,7 @@ const Blog = ({blog, handleAddToBookmarks, handleAddToTime}) => {
                     hashtags.map((hash, idx) => <span key={idx}>#<a href="">{hash}</a> </span>)
                 }
             </p>
-            <button className='border-b-2' onClick={()=>handleAddToTime(reading_time)}>Mark as read</button>
+            <button className='underline font-medium' onClick={()=>handleAddToTime(reading_time)}>Mark as read</button>
         </div>
     );
 };
